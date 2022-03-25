@@ -1,0 +1,26 @@
+﻿<Page x:Class="Library.Views.Pages.Authorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Authorization">
+
+    <StackPanel Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Image Source="/Views/Pages/logo_vis222.png" Margin="0 15"/>
+        <!-- Логин -->
+        <GroupBox Header="LOGIN" Background="#E6F3F3" BorderBrush="Transparent" BorderThickness="0" Margin="0 0 0 15">
+            <TextBox x:Name="LoginInput" BorderBrush="Transparent" Background="Transparent"/>
+        </GroupBox>
+        <!-- Пароль -->
+        <GroupBox Header="PASSWORD" Background="#E6F3F3" BorderBrush="Transparent" BorderThickness="0" Margin="0 0 0 15">
+            <PasswordBox x:Name="PasswordInput" BorderBrush="Transparent" Background="Transparent"/>
+        </GroupBox>
+        <!-- Кнопка авторизации -->
+        <Border Height="35" Margin="0 10 0 10" Background="#97FFFF" CornerRadius="15">
+            <Button Background="Transparent" BorderBrush="Transparent" Click="AuthorizationSubmit_click">ENTER</Button>
+        </Border>
+    </StackPanel>
+</Page>
