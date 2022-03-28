@@ -1,0 +1,27 @@
+﻿<Page x:Class="Library.Views.Pages.Authorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Authorization">
+
+    <StackPanel Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Image Source="/src/images/logo_vis222.png" Margin="0 15"/>
+        <GroupBox Header="LOGIN" Background="#E6F3F3" BorderBrush="Transparent" BorderThickness="0" Margin="0 0 0 15">
+            <TextBox x:Name="LoginInput" BorderBrush="Transparent" Background="Transparent"/>
+        </GroupBox>
+        <GroupBox Header="PASSWORD" Background="#E6F3F3" BorderBrush="Transparent" BorderThickness="0" Margin="0 0 0 15">
+            <StackPanel Orientation="Horizontal">
+                <PasswordBox x:Name="PasswordInput" Width="160" BorderBrush="Transparent" Background="Transparent"/>
+                <TextBox x:Name="PassShow" Width="160" BorderBrush="Transparent" Background="Transparent" Visibility="Collapsed"/>
+                <Image Width="20" Height="20" Source="/src/images/207-2073226_show-icon-png-white-password-view-icon.png" MouseDown="ShowPassword_MouseDown" MouseUp="HidePassword_MouseUp"/>
+            </StackPanel>
+        </GroupBox>
+        <Border Height="35" Margin="0 10 0 10" Background="#97FFFF" CornerRadius="15">
+            <Button Background="Transparent" BorderBrush="Transparent" Click="AuthorizationSubmit_click">ENTER</Button>
+        </Border>
+    </StackPanel>
+</Page>
