@@ -85,12 +85,12 @@ namespace Library.Views.Pages
 
         private async void WordReport_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            await ReportWorker.GenerateReport(LibraryCardItem, FileType.doc);
+            await ReportWorker.GenerateReport(LibraryCardItem, "doc");
         }
 
         private async void PDFReport_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            await ReportWorker.GenerateReport(LibraryCardItem, FileType.pdf);
+            await ReportWorker.GenerateReport(LibraryCardItem, "pdf");
         }
 
         private async void ExcelReport_MouseDown(object sender, MouseButtonEventArgs e)

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\edrum\source\repos\Library\Library\obj\Debug\
+C:\Users\edrum\Documents\GitHub\ISRPO-SREZ\Library\Library\obj\Debug\
 Library
 none
 false
 DEBUG;TRACE
-C:\Users\edrum\source\repos\Library\Library\App.xaml
+C:\Users\edrum\Documents\GitHub\ISRPO-SREZ\Library\Library\App.xaml
 566328372
 
 16-1559103265
-172020932843
+17-459951330
 Views\Pages\Authorization.xaml;Views\Pages\LoadingScreen.xaml;Views\Pages\ReaderListData.xaml;Views\Pages\ReaderProfile.xaml;Views\Windows\MainWindow.xaml;
 
 False

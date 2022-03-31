@@ -11,12 +11,6 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Library.Class
 {
-    enum FileType
-    {
-        pdf,
-        doc
-    }
-
     class ReportWorker
     {
         public static void KillProcess(string processName)
@@ -127,7 +121,7 @@ namespace Library.Class
                 }
             });
         }
-        public static async Task GenerateReport(LibraryСard libraryСard, FileType fileType)
+        public static async Task GenerateReport(LibraryСard libraryСard, string fileType)
         {
             SaveFileDialog savedialog = new SaveFileDialog();
             savedialog.Title = "Сохранить файл как...";
@@ -168,11 +162,11 @@ namespace Library.Class
 
                         int T = table1.Rows.Count;
                         table1.Rows[T].Delete();
-                        if (fileType == FileType.doc)
+                        if (fileType == "doc")
                         {
                             document.SaveAs2(savedialog.FileName, Word.WdSaveFormat.wdFormatDocument, Word.WdSaveOptions.wdDoNotSaveChanges);
                         }
-                        else if (fileType == FileType.pdf)
+                        else if (fileType == "pdf")
                         {
                             document.SaveAs2(savedialog.FileName, Word.WdSaveFormat.wdFormatPDF, Word.WdSaveOptions.wdDoNotSaveChanges);
                         }

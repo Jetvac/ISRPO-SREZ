@@ -15,8 +15,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="156*"></RowDefinition>
-            <RowDefinition Height="19*"/>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="6">
             <ComboBox x:Name="CBGenre" MinHeight="30" MinWidth="150" Margin="0,35" ></ComboBox>
@@ -46,10 +46,10 @@
         </DataGrid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
-            <Image Width="50" Grid.Row="2" Source="../../src/Images/img_400436.png" MouseDown="WordReport_MouseDown"/>
-            <Image Width="50" Grid.Row="2" Source="../../src/Images/exicon-1024x1024.png" MouseDown="ExcelReport_MouseDown"/>
-            <Image Width="50" Grid.Row="2" Source="../../src/Images/img_210051.png" MouseDown="PDFReport_MouseDown"/>
-            <Image Width="50" Grid.Row="2" Source="../../src/Images/img_99111.png"/>
+            <Image Width="50" Grid.Row="2" Margin="5" Source="../../src/Images/img_400436.png" MouseDown="WordReport_MouseDown"/>
+            <Image Width="50" Grid.Row="2" Margin="5" Source="../../src/Images/exicon-1024x1024.png" MouseDown="ExcelReport_MouseDown"/>
+            <Image Width="50" Grid.Row="2" Margin="5" Source="../../src/Images/img_210051.png" MouseDown="PDFReport_MouseDown"/>
+            <Image Width="50" Grid.Row="2" Margin="5" Source="../../src/Images/img_99111.png"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
