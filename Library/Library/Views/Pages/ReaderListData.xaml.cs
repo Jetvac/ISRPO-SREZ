@@ -100,6 +100,7 @@ namespace Library.Views.Pages
         private async void ReaderTicket_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Reader reader = ReaderDataList.SelectedItem as Reader;
+            if (reader == null) { MessageBox.Show("Выберите пользователя!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error); return; }
 
             LibraryСard ReaderCard = ApiControl.GetReaderLibraryCard(reader);
             await ReportWorker.ReaderWordGenerate(reader, ReaderCard);
