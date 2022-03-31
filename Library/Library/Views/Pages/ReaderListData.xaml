@@ -1,0 +1,75 @@
+﻿<Page x:Class="Library.Views.Pages.ReaderListData"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReaderListData"
+      FontSize="14">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox HorizontalAlignment="Left" Background="#E6F3F3" BorderBrush="Transparent" BorderThickness="0" Margin="15 10 15 10" Width="200">
+            <TextBox x:Name="ReaderSearchInput" VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Text="Поиск по читателю" PreviewMouseDown="ReaderSearch_PreviewMouseDown" TextChanged="ReaderSearch_TextChanged"/>
+        </GroupBox>
+
+        <ScrollViewer Grid.Row="1"  Margin="15" Background="#E6F3F3">
+            <ListView x:Name="ReaderDataList" ScrollViewer.CanContentScroll="True" Background="#FFE6F3F3" Grid.ColumnSpan="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentControl MouseDoubleClick="LoadReader_MouseDoubleClick">
+                            <Grid>
+                                <StackPanel Orientation="Vertical" Width="Auto" Height="auto">
+                                    <Ellipse MinWidth="100" Width="auto" Height="auto" MinHeight="100">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="{Binding Photo}" Stretch="UniformToFill" ></ImageBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding FullNameInitial}"></TextBlock>
+
+                                </StackPanel>
+
+                            </Grid>
+                        </ContentControl>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Width="600" ></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="0" Margin="0, 0, 15, 0" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Image Source="../../src/Images/img_570846.png" Width="50" Margin="0 0 15 0" MouseDown="ReaderTicket_MouseDown"/>
+            <Image Source="../../src/Images/img_20646.png" Width="50" MouseDown="CSV_MouseDown"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="0, 0, 15, 0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Source="../../src/Images/tlb-logout-1.png" Width="50" RenderTransformOrigin="0.5,0.5" MouseDown="AccountExit_MouseDown">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="0, 0, 15, 0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Image Source="../../src/Images/logo_vis222.png" Width="120">
+            </Image>
+        </StackPanel>
+    </Grid>
+</Page>

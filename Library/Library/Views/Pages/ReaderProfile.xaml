@@ -1,0 +1,62 @@
+﻿<Page x:Class="Library.Views.Pages.ReaderProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReaderProfile"
+      Loaded="Page_Loaded">
+
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="156*"></RowDefinition>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="6">
+            <ComboBox x:Name="CBGenre" MinHeight="30" MinWidth="150" Margin="0,35" ></ComboBox>
+            <ComboBox x:Name="CBAuthor" MinHeight="30" MinWidth="150" Margin="15,35"></ComboBox>
+            <ComboBox x:Name="CBPublisher" MinHeight="30" MinWidth="150" Margin="0,35"/>
+            <GroupBox Header="Дата" Margin="5 15 5 20" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <DatePicker />
+                    <DatePicker />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Grid.Column="1" x:Name="DgReaderBook" Background="#FFDCF6F0" Grid.ColumnSpan="6" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Срок возвращения" Binding="{Binding DateForReturn}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Автор Название" Binding="{Binding Book.AuthorTitle}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Издательство" Binding="{Binding Book.PublisherEx}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Book.Height}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Отметка о возвращении">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path=Path}" Width="40" Height="40"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Width="50" Grid.Row="2" Source="../../src/Images/img_400436.png" MouseDown="WordReport_MouseDown"/>
+            <Image Width="50" Grid.Row="2" Source="../../src/Images/exicon-1024x1024.png" MouseDown="ExcelReport_MouseDown"/>
+            <Image Width="50" Grid.Row="2" Source="../../src/Images/img_210051.png" MouseDown="PDFReport_MouseDown"/>
+            <Image Width="50" Grid.Row="2" Source="../../src/Images/img_99111.png"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Image Grid.Column="6" Grid.Row="2" HorizontalAlignment="Left" Source="../../src/images/returns-3-of-the-margin-1e07d250d5f71c08ba8c529f43576b4f.png" MouseDown="back_MouseDown" Width="38"/>
+            <Image Grid.Column="6" Grid.Row="2" HorizontalAlignment="Right" Source="../../src/images/logo_vis222.png" Width="75"/>
+        </StackPanel>
+
+    </Grid>
+
+</Page>
